@@ -11,6 +11,7 @@ import { Cloud } from 'lucide-react';
 const routes = [
   { href: '/', label: 'Home' },
   { href: '/contact', label: 'Contact' },
+  {href:'services',label:'Services'},
   { href: '/info', label: 'Info' },
 ];
 
@@ -41,7 +42,6 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center space-x-4">
-          <ModeToggle />
           <Button className="bg-[#00A1E0] hover:bg-[#0088BC]">Get Started</Button>
         </div>
       </div>

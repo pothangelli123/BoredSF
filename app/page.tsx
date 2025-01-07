@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Navigation, Phone, MessageSquare, Share2, Zap, Brain } from 'lucide-react';
+import { Mail, Navigation, Phone, MessageSquare, Share2, Zap, Brain, ArrowRight, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -46,96 +46,178 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative flex min-h-[600px] w-full items-center justify-center overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
-        <div className="container relative flex flex-col items-center justify-center text-center">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-            Unleash the Power of
-            <br />
-            Salesforce Marketing Cloud
-          </h1>
-          <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-            Transform your marketing strategy with powerful automation, personalization, and analytics tools.
-          </p>
-          <div className="mt-8 flex gap-4">
-            <Button size="lg" className="bg-[#00A1E0] hover:bg-[#0088BC]" asChild>
-              <Link href="/contact">Get Started</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/info">Learn More</Link>
-            </Button>
+      <section className="relative py-20 lg:py-32 overflow-hidden bg-white">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-wrap -mx-4">
+            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
+              <div className="max-w-lg">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 text-gray-900">
+                  Salesforce Marketing Cloud Integration
+                </h1>
+                <p className="text-lg text-gray-600 mb-8">
+                  Seamlessly connect and automate your marketing operations with the world's #1 CRM platform. Transform customer experiences across every touchpoint.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button 
+                    size="lg"
+                    className="bg-[#00A1E0] hover:bg-[#0088BC] text-white px-8"
+                    asChild
+                  >
+                    <Link href="/contact">Get Started</Link>
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="border-gray-300"
+                    asChild
+                  >
+                    <Link href="/docs" className="flex items-center gap-2">
+                      View Documentation
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 px-4">
+              <div className="relative mx-auto max-w-lg bg-white p-4 rounded-2xl shadow-xl">
+                <Image
+                  src="https://res.cloudinary.com/dxvepj7bu/image/upload/v1708852832/marketing-analytics-dashboard_kw9f2x.webp"
+                  alt="Marketing Cloud Dashboard"
+                  width={600}
+                  height={450}
+                  className="rounded-lg w-full h-auto object-cover"
+                  priority
+                />
+                {/* Status Indicator */}
+                <div className="absolute -bottom-6 -left-6 p-4 bg-white rounded-xl shadow-lg border border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
+                    <p className="text-sm font-medium text-gray-800">Live Integration Status</p>
+                  </div>
+                </div>
+                
+                {/* Decorative Elements */}
+                <div className="absolute -right-8 -top-8 w-40 h-40 bg-[#00A1E0]/10 rounded-full blur-3xl"></div>
+                <div className="absolute -left-8 -bottom-8 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+                
+                {/* Additional Visual Elements */}
+                <div className="absolute -right-4 top-1/2 transform -translate-y-1/2">
+                  <div className="bg-white p-3 rounded-lg shadow-lg border border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-[#00A1E0]"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#00A1E0]/60"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#00A1E0]/30"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="w-full py-20">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Our Services
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container px-4 mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: "10M+", label: "Marketing Messages Sent" },
+              { number: "98%", label: "Customer Satisfaction" },
+              { number: "150+", label: "Integration Partners" },
+              { number: "24/7", label: "Expert Support" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-[#00A1E0] mb-2">{stat.number}</div>
+                <div className="text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid Section */}
+      <section className="py-20">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Everything you need for Marketing Cloud
             </h2>
-            <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground">
-              Explore our comprehensive suite of marketing tools designed to help you connect with your customers.
+            <p className="text-lg text-gray-600">
+              Comprehensive tools and features to maximize your marketing automation capabilities
             </p>
           </div>
-          <div className="mt-16 grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <Card key={service.title} className="transition-all hover:shadow-lg">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-[#00A1E0]" />
-                    <CardTitle className="mt-4">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="ghost" className="mt-2 text-[#00A1E0] hover:text-[#0088BC]" asChild>
-                      <Link href="/info">Learn More →</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Card key={service.title} className="border border-gray-100 hover:border-[#00A1E0]/20 transition-all duration-300">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[#00A1E0]/10 mb-4">
+                    <service.icon className="h-6 w-6 text-[#00A1E0]" />
+                  </div>
+                  <CardTitle className="mb-2">{service.title}</CardTitle>
+                  <CardDescription className="text-gray-600">{service.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Postman Collection Section */}
-      <section className="border-t bg-muted/50 w-full">
-        <div className="container mx-auto max-w-6xl px-4 py-20">
-          <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center">
-            <div className="flex-1 text-center lg:text-left">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                Explore Our API Collection
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Get started with our comprehensive Postman collection for Salesforce Marketing Cloud APIs.
-                Streamline your integration process and explore all available endpoints.
-              </p>
-              <Button className="mt-8 bg-[#00A1E0] hover:bg-[#0088BC]" size="lg">
-                Download Collection
-              </Button>
-            </div>
-            <div className="flex-1">
-              <Image
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80"
-                alt="API Documentation"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-xl"
-              />
-            </div>
+      {/* Integration Process Section */}
+      
+
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Trusted by Marketing Teams</h2>
+            <p className="text-lg text-gray-600">See what our customers have to say</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "Marketing Cloud has transformed how we engage with our customers. The automation capabilities are game-changing.",
+                author: "Sarah Johnson",
+                role: "Marketing Director",
+                company: "TechCorp Inc."
+              },
+              {
+                quote: "The integration was seamless, and the results were immediate. Our email engagement increased by 150%.",
+                author: "Michael Chen",
+                role: "Digital Marketing Manager",
+                company: "Growth Solutions"
+              },
+              {
+                quote: "Outstanding support team and powerful features. Exactly what we needed to scale our marketing efforts.",
+                author: "Emily Rodriguez",
+                role: "CMO",
+                company: "Innovation Labs"
+              }
+            ].map((testimonial, index) => (
+              <Card key={index} className="bg-white border-none shadow-lg">
+                <CardHeader>
+                  <div className="mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-yellow-400">★</span>
+                    ))}
+                  </div>
+                  <CardDescription className="text-gray-700 text-lg mb-4">
+                    "{testimonial.quote}"
+                  </CardDescription>
+                  <div>
+                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                    <div className="text-sm text-gray-600">{testimonial.role}</div>
+                    <div className="text-sm text-[#00A1E0]">{testimonial.company}</div>
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      
     </div>
   );
 }
