@@ -19,12 +19,12 @@ export function Footer() {
             <h3 className="text-lg font-semibold">About</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
                   Company
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
                   Careers
                 </Link>
               </li>
@@ -34,12 +34,12 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Resources</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/docs" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
                   Blog
                 </Link>
               </li>
@@ -49,12 +49,12 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Legal</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
                   Terms of Service
                 </Link>
               </li>
