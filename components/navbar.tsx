@@ -24,7 +24,7 @@ export function Navbar() {
           <Cloud className="h-6 w-6 text-[#00A1E0]" />
           <span className="font-bold">BoredSF</span>
         </Link>
-        <nav className="flex items-center space-x-6">
+        <nav className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-6">
           {routes.map((route) => (
             <Link
               key={route.href}

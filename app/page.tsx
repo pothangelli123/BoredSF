@@ -76,40 +76,42 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="container flex flex-col items-center py-20">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Our Services
-          </h2>
-          <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground">
-            Explore our comprehensive suite of marketing tools designed to help you connect with your customers.
-          </p>
-        </div>
-        <div className="mt-16 grid w-full max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <Card key={service.title} className="transition-all hover:shadow-lg">
-                <CardHeader>
-                  <Icon className="h-10 w-10 text-[#00A1E0]" />
-                  <CardTitle className="mt-4">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="ghost" className="mt-2 text-[#00A1E0] hover:text-[#0088BC]" asChild>
-                    <Link href="/info">Learn More →</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
+      <section className="w-full py-20">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Our Services
+            </h2>
+            <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground">
+              Explore our comprehensive suite of marketing tools designed to help you connect with your customers.
+            </p>
+          </div>
+          <div className="mt-16 grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Card key={service.title} className="transition-all hover:shadow-lg">
+                  <CardHeader>
+                    <Icon className="h-10 w-10 text-[#00A1E0]" />
+                    <CardTitle className="mt-4">{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button variant="ghost" className="mt-2 text-[#00A1E0] hover:text-[#0088BC]" asChild>
+                      <Link href="/info">Learn More →</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Postman Collection Section */}
-      <section className="border-t bg-muted/50">
-        <div className="container flex min-h-[500px] items-center py-20">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:items-center">
+      <section className="border-t bg-muted/50 w-full">
+        <div className="container mx-auto max-w-6xl px-4 py-20">
+          <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center">
             <div className="flex-1 text-center lg:text-left">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                 Explore Our API Collection
